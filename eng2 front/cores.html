@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ADAPV - Cores</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            carmesim: '#A6032F',
+            areia: '#BCAF9E',
+            noturno: '#0B1926',
+            pastel: '#D9CAB8',
+            neve: '#F2F2F2',
+          },
+        },
+      },
+    };
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="flex h-screen bg-neve font-sans text-noturno">
+
+  <!-- Sidebar -->
+  <aside class="w-72 bg-noturno text-neve flex flex-col shadow-xl">
+    <div class="p-6 border-b border-areia flex items-center gap-3">
+      <svg data-lucide="paw-print" class="w-6 h-6 text-pastel"></svg>
+      <a href="gpt.html" class="text-2xl font-bold tracking-wide text-pastel">ADAPV</a>
+    </div>
+
+    <nav class="p-6 flex-1 overflow-y-auto space-y-4">
+      <!-- Dropdown Animais -->
+      <div>
+        <button onclick="toggleMenu('menu-animais', this)" class="w-full flex justify-between items-center text-left hover:text-carmesim transition">
+          <span class="flex gap-2 items-center">
+            <svg data-lucide="dog" class="w-5 h-5"></svg>
+            Animais
+          </span>
+          <svg data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300"></svg>
+        </button>
+        <ul id="menu-animais" class="ml-6 mt-2 space-y-2 hidden">
+          <li><a href="#" class="block hover:text-carmesim">Cadastrar</a></li>
+          <li><a href="#" class="block hover:text-carmesim">Consultar</a></li>
+          <li><a href="#" class="block hover:text-carmesim">Adoção</a></li>
+        </ul>
+      </div>
+
+      <!-- Dropdown Doação -->
+      <div>
+        <button onclick="toggleMenu('menu-doacao', this)" class="w-full flex justify-between items-center text-left hover:text-carmesim transition">
+          <span class="flex gap-2 items-center">
+            <svg data-lucide="hand-heart" class="w-5 h-5"></svg>
+            Doação
+          </span>
+          <svg data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300"></svg>
+        </button>
+        <ul id="menu-doacao" class="ml-6 mt-2 space-y-2 hidden">
+          <li><a href="#" class="block hover:text-carmesim">Doar</a></li>
+          <li><a href="#" class="block hover:text-carmesim">Consultar</a></li>
+          <li><a href="#" class="block hover:text-carmesim">Utilizar</a></li>
+        </ul>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- Conteúdo Principal -->
+  <main class="flex-1 bg-neve p-10 overflow-auto">
+    <section id="cores" class="max-w-4xl mx-auto bg-white shadow-lg rounded-2xl p-8">
+      <h1 class="text-3xl font-bold text-noturno mb-6">Identidade Visual: Cores</h1>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+        <!-- Cor 1 -->
+        <div class="text-center">
+          <div class="w-full h-24 rounded-xl bg-carmesim shadow-md"></div>
+          <p class="mt-2 font-medium text-carmesim">#A6032F</p>
+        </div>
+        <!-- Cor 2 -->
+        <div class="text-center">
+          <div class="w-full h-24 rounded-xl bg-areia shadow-md"></div>
+          <p class="mt-2 font-medium text-areia">#BCAF9E</p>
+        </div>
+        <!-- Cor 3 -->
+        <div class="text-center">
+          <div class="w-full h-24 rounded-xl bg-noturno shadow-md"></div>
+          <p class="mt-2 font-medium text-noturno">#0B1926</p>
+        </div>
+        <!-- Cor 4 -->
+        <div class="text-center">
+          <div class="w-full h-24 rounded-xl bg-pastel shadow-md"></div>
+          <p class="mt-2 font-medium text-pastel">#D9CAB8</p>
+        </div>
+        <!-- Cor 5 -->
+        <div class="text-center">
+          <div class="w-full h-24 rounded-xl bg-neve border border-gray-300 shadow-md"></div>
+          <p class="mt-2 font-medium text-gray-600">#F2F2F2</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    lucide.createIcons();
+
+    function toggleMenu(id, btn) {
+      const menu = document.getElementById(id);
+      menu.classList.toggle('hidden');
+      const icon = btn.querySelector('[data-lucide="chevron-down"]');
+      icon.classList.toggle('rotate-180');
+    }
+  </script>
+</body>
+</html>
