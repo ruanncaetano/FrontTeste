@@ -37,7 +37,7 @@ document.write(`
         </button>
         <ul id="menu-pessoa" class="ml-6 mt-2 space-y-2 hidden">
         <li><a href="adocao.html" class="block hover:text-carmesim">Melhorar esse nome de menu</a></li>
-          <li><a href="adocao.html" class="block hover:text-carmesim">Cadastrar</a></li>
+          <li><a href="adotante.html" class="block hover:text-carmesim">Cadastrar</a></li>
           <li><a href="buscarAdocao.html" class="block hover:text-carmesim">Consultar</a></li>
         </ul>
       </div>
